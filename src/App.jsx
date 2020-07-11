@@ -1,9 +1,10 @@
 import React from 'react';
+import Counter from './counter';
 
 function App() {
   return (
     <div className="App">
-      Just this
+      <Counter />
     </div>
   );
 }
