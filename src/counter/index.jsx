@@ -20,7 +20,6 @@ class Counter extends Component {
   render() {
     return (
       <Container>
-        
         <Row>Valor atual: {this.state.value}</Row>
         <Row>
           <Button onClick={this.incrementValue} label="+" color="primary" />
