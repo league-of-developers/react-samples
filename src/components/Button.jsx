@@ -9,7 +9,7 @@ const Button = ({ onClick, label, color }) => (
 );
 
 Button.defaultProps = {
-  label: "label",
+  label: "label", 
   color: "primary"
 };
 
