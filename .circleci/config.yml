@@ -15,17 +15,17 @@ jobs:
             - dependencies-{{ checksum "yarn.lock" }}
       - run: yarn install --frozen-lockfile
       - save_cache:
-        paths:
-          - node_modules
-        key: dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+          key: dependencies-{{ checksum "yarn.lock" }}
 
   test:
     <<: *defaults
     steps:
       - checkout
       - restore_cache:
-        keys:
-          - dependencies-{{ checksum "yarn.lock" }}
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
       - run: yarn test
 
 workflows:
