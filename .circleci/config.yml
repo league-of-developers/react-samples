@@ -1,7 +1,38 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+
+default: &defaults
+  docker:
+    - image: circleci/node:10.19.0
+  working_directory: ~/react-samples
+
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock"}}
+      - run: yarn install --frozen-lockfile
+      - save_cache:
+        paths:
+          - node_modules
+        key: dependencies-{{ checksum "yarn.lock"}}
+
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+        keys:
+          - dependencies-{{ checksum "yarn.lock"}}
+      - run: yarn test --no-cache
+
 workflows:
-  node-tests:
+  version: 2
+  test:
     jobs:
-      - node/test
+      - build
+      - test:
+        requires:
+          - build

@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Button } from "../components/Button";
-import { Container } from "../components/Container";
-import { Row } from "../components/Row";
+import React, { Component } from 'react';
+import { Button } from '../components/Button';
+import { Container } from '../components/Container';
+import { Row } from '../components/Row';
 
 class Counter extends Component {
   constructor(props) {
@@ -22,8 +22,8 @@ class Counter extends Component {
       <Container>
         <Row>Valor atual: {this.state.value}</Row>
         <Row>
-          <Button onClick={this.incrementValue} label="+" color="primary" />
-          <Button onClick={this.decrementValue} label="-" color="danger"/>
+          <Button onClick={this.incrementValue} label='+' color='primary' />
+          <Button onClick={this.decrementValue} label='-' color='danger' />
         </Row>
       </Container>
     );
