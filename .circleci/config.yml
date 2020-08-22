@@ -12,12 +12,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "yarn.lock"}}
+            - dependencies-{{ checksum "yarn.lock" }}
       - run: yarn install --frozen-lockfile
       - save_cache:
         paths:
           - node_modules
-        key: dependencies-{{ checksum "yarn.lock"}}
+        key: dependencies-{{ checksum "yarn.lock" }}
 
   test:
     <<: *defaults
@@ -25,8 +25,8 @@ jobs:
       - checkout
       - restore_cache:
         keys:
-          - dependencies-{{ checksum "yarn.lock"}}
-      - run: yarn test --no-cache
+          - dependencies-{{ checksum "yarn.lock" }}
+      - run: yarn test
 
 workflows:
   version: 2
