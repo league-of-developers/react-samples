@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Row as BootstrapRow } from 'reactstrap';
 
 const Row = ({ children }) => (
@@ -7,4 +9,8 @@ const Row = ({ children }) => (
   </BootstrapRow>
 );
 
-export { Row };
+Row.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default { Row };

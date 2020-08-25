@@ -1,4 +1,4 @@
-import { soma } from './util';
+import soma from './util';
 
 describe('Utils', () => {
   it('Should return the right sum', () => {
