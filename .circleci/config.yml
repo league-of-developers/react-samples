@@ -34,7 +34,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - devDependencies--{{ checksum "yarn.lock" }}
+            - dependencies--{{ checksum "yarn.lock" }}
       - run: yarn lint
 
 workflows:
