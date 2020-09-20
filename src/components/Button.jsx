@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Button as BootstrapButton } from "reactstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button as BootstrapButton } from 'reactstrap';
 
 const Button = ({ onClick, label, color }) => (
   <BootstrapButton color={color} onClick={onClick}>
@@ -9,8 +9,8 @@ const Button = ({ onClick, label, color }) => (
 );
 
 Button.defaultProps = {
-  label: "label", 
-  color: "primary"
+  label: 'label',
+  color: 'primary',
 };
 
 Button.propTypes = {
@@ -19,4 +19,4 @@ Button.propTypes = {
   color: PropTypes.string,
 };
 
-export { Button };
+export default Button;

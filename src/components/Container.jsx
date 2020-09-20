@@ -1,8 +1,14 @@
 import React from 'react';
-import {Container as ContainerBootstrap} from 'reactstrap';
+import PropTypes from 'prop-types';
 
-const Container = ({children}) => (
-    <ContainerBootstrap>{children}</ContainerBootstrap>
+import { Container as ContainerBootstrap } from 'reactstrap';
+
+const Container = ({ children }) => (
+  <ContainerBootstrap>{children}</ContainerBootstrap>
 );
 
-export {Container};
+Container.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default { Container };
