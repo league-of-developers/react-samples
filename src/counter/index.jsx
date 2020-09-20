@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '../components/Button';
+import MySwal from '../components/FancyAlert';
 
 const Counter = () => {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (count === 10) {
+      MySwal.fire('Good job!', 'You clicked ten times!', 'success');
+    }
+  }, [count]);
+
   return (
     <div>
       <p>
@@ -30,3 +38,5 @@ const Counter = () => {
 };
 
 export default Counter;
+
+// MySwal.fire('Good job!', 'You clicked the button!', 'success')
