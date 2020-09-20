@@ -17,12 +17,14 @@ const Counter = () => {
         label="+"
       />
       <Button
+        isDisabled={count === 0}
         onClick={() => {
           setCount(count - 1);
         }}
         label="-"
         color="danger"
       />
+      {count === 0 && <p>Valor tem que ser maior que zero.</p>}
     </div>
   );
 };
